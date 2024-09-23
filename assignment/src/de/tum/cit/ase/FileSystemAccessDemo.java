@@ -13,7 +13,6 @@ public final class FileSystemAccessDemo {
     public void accessFileSystemViaFilesRead(String filePathString) {
         try {
             byte[] fileContent = Files.readAllBytes(Paths.get(filePathString));
-            System.out.println("Read operation successful. File content length: " + fileContent.length);
         } catch (IOException e) {
             throw new RuntimeException("Error reading file: " + filePathString, e);
         }
@@ -23,7 +22,6 @@ public final class FileSystemAccessDemo {
         try {
             String content = "This is sample data for writing into the file.";
             Files.write(Paths.get(filePathString), content.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
-            System.out.println("Write operation successful.");
         } catch (IOException e) {
             throw new RuntimeException("Error writing to file: " + filePathString, e);
         }
@@ -33,10 +31,8 @@ public final class FileSystemAccessDemo {
         try {
             Path filePath = Paths.get(filePathString);
             boolean isExecutable = Files.isExecutable(filePath);
-            System.out.println("Is file executable? " + isExecutable);
 
             Files.setPosixFilePermissions(filePath, Set.of(PosixFilePermission.OWNER_EXECUTE));
-            System.out.println("Execute permission set.");
         } catch (IOException e) {
             throw new RuntimeException("Error setting execute permissions on file: " + filePathString, e);
         }
@@ -45,7 +41,6 @@ public final class FileSystemAccessDemo {
     public void accessFileSystemViaFilesDelete(String filePathString) {
         try {
             Files.delete(Paths.get(filePathString));
-            System.out.println("Delete operation successful.");
         } catch (IOException e) {
             throw new RuntimeException("Error deleting file: " + filePathString, e);
         }
