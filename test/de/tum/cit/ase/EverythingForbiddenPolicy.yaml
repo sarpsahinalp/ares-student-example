@@ -1,0 +1,18 @@
+regardingTheSupervisedCode:
+  theFollowingProgrammingLanguageConfigurationIsUsed: JAVA_USING_GRADLE_ARCHUNIT_AND_ASPECTJ
+  theProgrammingLanguageUsesTheFollowingPackage: "de.tum.cit.ase.ares"
+  theMainClassInsideThisPackageIs: "Main"
+  theFollowingClassesAreTestClasses: []
+  theFollowingResourceAccessesArePermitted:
+    regardingFileSystemInteractions: []
+    regardingNetworkConnections: []
+    regardingCommandExecutions: []
+    regardingThreadCreations: []
+    regardingPackageImports:
+      - importTheFollowingPackage: "java.io"
+      - importTheFollowingPackage: "java.util"
+      - importTheFollowingPackage: "java.nio"
+      - importTheFollowingPackage: "java.net"
+      - importTheFollowingPackage: "java.awt"
+      - importTheFollowingPackage: "javax.swing"
+      - importTheFollowingPackage: "javax.sound"
