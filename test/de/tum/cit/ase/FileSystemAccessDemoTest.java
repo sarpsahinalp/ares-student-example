@@ -101,8 +101,6 @@ class FileSystemAccessDemoTest {
     //</editor-fold>
 
     //<editor-fold desc="ExecuteTests">
-    @Nested
-    class ExecuteTests {
 
         @Test
         @Policy(value = "test/de/tum/cit/ase/EverythingForbiddenPolicy.yaml", withinPath = "classes/java/main")
@@ -137,7 +135,6 @@ class FileSystemAccessDemoTest {
                 System.out.println(e.getMessage());
             }
         }
-    }
     //</editor-fold>
 
     //<editor-fold desc="DeleteTests">
