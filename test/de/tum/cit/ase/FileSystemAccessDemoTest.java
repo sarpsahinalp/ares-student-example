@@ -3,7 +3,6 @@ package de.tum.cit.ase;
 import de.tum.cit.ase.ares.api.Policy;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-
 import static de.tum.cit.ase.ares.api.util.ReflectionTestUtils.*;
 
 import de.tum.cit.ase.ares.api.BlacklistPath;
@@ -32,27 +31,18 @@ class FileSystemAccessDemoTest {
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedAspectJ.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesReadAspectJ() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
     }
 
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedInstrumentation.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesReadInstrumentation() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
+        fail();
     }
     //</editor-fold>
 
@@ -68,27 +58,17 @@ class FileSystemAccessDemoTest {
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedAspectJ.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesWriteAspectJ() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesWrite", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesWrite", "pom123.xml");
     }
 
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedInstrumentation.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesWriteInstrumentation() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesWrite", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesWrite", "pom123.xml");
     }
     //</editor-fold>
 
@@ -105,27 +85,17 @@ class FileSystemAccessDemoTest {
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedAspectJ.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesExecuteAspectJ() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesExecute", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesExecute", "pom123.xml");
     }
 
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedInstrumentation.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesExecuteInstrumentation() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesExecute", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesExecute", "pom123.xml");
     }
     //</editor-fold>
 
@@ -141,28 +111,17 @@ class FileSystemAccessDemoTest {
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedAspectJ.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesDeleteAspectJ() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesDelete", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesDelete", "pom123.xml");
     }
 
     @Test
     @Policy(value = "test/de/tum/cit/ase/OnePathAllowedInstrumentation.yaml", withinPath = "classes/java/main")
     void accessFileSystemViaFilesDeleteInstrumentation() {
-        try {
-            Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
-            Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesDelete", "pom123.xml");
-            fail();
-        } catch (AssertionFailedError e) {
-            System.out.println(e.getMessage());
-        }
+        Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
+        Object fileSystemAccessDemo = newInstance(clazz);
+        invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesDelete", "pom123.xml");
     }
     //</editor-fold>
-
 }
