@@ -10,14 +10,7 @@ import java.util.*;
 
 public final class FileSystemAccessDemo {
 
-    public static void main(String[] args) {
-        accessFileSystemViaFilesRead("pom123.xml");
-        accessFileSystemViaFilesWrite("pom123.xml");
-        accessFileSystemViaFilesExecute("pom123.xml");
-        accessFileSystemViaFilesDelete("pom123.xml");
-    }
-
-    public static void accessFileSystemViaFilesRead(String filePathString) {
+    public void accessFileSystemViaFilesRead(String filePathString) {
         try {
             byte[] fileContent = Files.readAllBytes(Paths.get(filePathString));
             System.out.println("Read operation successful. File content length: " + fileContent.length);
@@ -26,7 +19,7 @@ public final class FileSystemAccessDemo {
         }
     }
 
-    public static void accessFileSystemViaFilesWrite(String filePathString) {
+    public void accessFileSystemViaFilesWrite(String filePathString) {
         try {
             String content = "This is sample data for writing into the file.";
             Files.write(Paths.get(filePathString), content.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
@@ -36,7 +29,7 @@ public final class FileSystemAccessDemo {
         }
     }
 
-    public static void accessFileSystemViaFilesExecute(String filePathString) {
+    public void accessFileSystemViaFilesExecute(String filePathString) {
         try {
             Path filePath = Paths.get(filePathString);
             boolean isExecutable = Files.isExecutable(filePath);
@@ -49,7 +42,7 @@ public final class FileSystemAccessDemo {
         }
     }
 
-    public static void accessFileSystemViaFilesDelete(String filePathString) {
+    public void accessFileSystemViaFilesDelete(String filePathString) {
         try {
             Files.delete(Paths.get(filePathString));
             System.out.println("Delete operation successful.");

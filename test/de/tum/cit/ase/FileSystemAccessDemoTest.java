@@ -27,7 +27,7 @@ class FileSystemAccessDemoTest {
         void accessFileSystemViaFilesReadArchUnit() {
             Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
             Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead");
+            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
         }
 
         @Test
@@ -35,7 +35,7 @@ class FileSystemAccessDemoTest {
         void accessFileSystemViaFilesReadAspectJ() {
             Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
             Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead");
+            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
         }
 
         @Test
@@ -43,8 +43,7 @@ class FileSystemAccessDemoTest {
         void accessFileSystemViaFilesReadInstrumentation() {
             Class<?> clazz = getClazz("de.tum.cit.ase.FileSystemAccessDemo");
             Object fileSystemAccessDemo = newInstance(clazz);
-            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead");
+            invokeMethod(fileSystemAccessDemo, "accessFileSystemViaFilesRead", "pom123.xml");
         }
     }
-
 }
