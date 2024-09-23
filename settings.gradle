@@ -1,0 +1,3 @@
+rootProject.name = 'ares-student-example-gradle-Tests'
+// includeBuild('/path/to/repository-solution')
+// includeBuild('/path/to/repository-exercise')
