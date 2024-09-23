@@ -1,6 +1,6 @@
 regardingTheSupervisedCode:
   theFollowingProgrammingLanguageConfigurationIsUsed: JAVA_USING_GRADLE_ARCHUNIT_AND_ASPECTJ
-  theProgrammingLanguageUsesTheFollowingPackage: "de.tum.cit.ase.ares"
+  theProgrammingLanguageUsesTheFollowingPackage: "de.tum.cit.ase"
   theMainClassInsideThisPackageIs: "Main"
   theFollowingClassesAreTestClasses: []
   theFollowingResourceAccessesArePermitted:
