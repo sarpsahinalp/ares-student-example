@@ -7,13 +7,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.*;
 import java.util.*;
 
-import static de.tum.in.test.api.util.ReflectionTestUtils.*;
+import static de.tum.cit.ase.ares.api.util.ReflectionTestUtils.*;
 
-import de.tum.in.test.api.BlacklistPath;
-import de.tum.in.test.api.PathType;
-import de.tum.in.test.api.StrictTimeout;
-import de.tum.in.test.api.WhitelistPath;
-import de.tum.in.test.api.jupiter.Public;
+import de.tum.cit.ase.ares.api.BlacklistPath;
+import de.tum.cit.ase.ares.api.PathType;
+import de.tum.cit.ase.ares.api.StrictTimeout;
+import de.tum.cit.ase.ares.api.WhitelistPath;
+import de.tum.cit.ase.ares.api.jupiter.Public;
 
 /**
  * @author Stephan Krusche (krusche@in.tum.de)
@@ -23,7 +23,6 @@ import de.tum.in.test.api.jupiter.Public;
 @WhitelistPath("target") // mainly for Artemis
 @BlacklistPath("target/test-classes") // prevent access to test-related classes and resources
 class SortingExampleBehaviorTest {
-
     private List<Date> dates;
     private List<Date> datesWithCorrectOrder;
 

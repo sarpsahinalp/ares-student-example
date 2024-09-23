@@ -1,11 +1,17 @@
 plugins {
+    id 'io.freefair.aspectj.post-compile-weaving' version '8.10'
+    id "com.gradleup.shadow" version "8.3.2"
 }
 
 apply plugin: 'java'
-sourceCompatibility = 17
+sourceCompatibility = 21
 version = '1.0.0'
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
+
+configurations {
+    aspectj
+}
 
 repositories {
     mavenCentral()
@@ -13,8 +19,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'de.tum.in.ase:artemis-java-test-sandbox:1.13.0'
+    testImplementation 'de.tum.cit.ase:ares:2.0.0-SNAPSHOT' // Main project dependency
     implementation 'org.apache.commons:commons-lang3:3.14.0'
+
+    implementation 'org.aspectj:aspectjtools:1.9.22' // AspectJ Tools dependency
+    aspectj "org.aspectj:aspectjrt:1.9.22" // AspectJ Runtime dependency
+    aspect 'de.tum.cit.ase:ares:2.0.0-SNAPSHOT' // Aspect library (like in aspectLibraries)
 
     // testImplementation(':ares-student-example-gradle')
     // testImplementation(':ares-student-example-gradle-Solution')
@@ -65,6 +75,30 @@ def forbiddenPackageFolders = [ //(2)
                                 "$studentOutputDir/sun/",
                                 "$studentOutputDir/worker/org/gradle/"
 ]
+
+shadowJar {
+    // Attaching the shaded artifact with classifier "agent"
+    archiveClassifier.set('agent')
+
+    // Adding manifest entries for Premain-Class and other properties
+    manifest {
+        attributes(
+                'Premain-Class': 'de.tum.cit.ase.ares.api.aop.java.instrumentation.JavaInstrumentationAgent',
+                'Can-Redefine-Classes': 'true',
+                'Can-Retransform-Classes': 'true'
+        )
+    }
+
+    // Include only specific artifacts in the shading process
+    dependencies {
+        include(dependency('de.tum.cit.ase:ares'))
+    }
+}
+
+tasks.build {
+    dependsOn shadowJar
+}
+
 test {
     doFirst { //(1)
         for (String packageFolder in forbiddenPackageFolders) {
@@ -74,6 +108,11 @@ test {
     defaultCharacterEncoding = 'UTF-8'
     testLogging.showStandardStreams = true
     useJUnitPlatform()
+
+    jvmArgs = [
+            "-javaagent:${shadowJar.archiveFile.get().asFile}",
+            "-Xbootclasspath/a:${configurations.aspectj.singleFile}"
+    ]
 }
 
 

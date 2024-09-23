@@ -5,12 +5,12 @@ import java.net.URISyntaxException;
 import org.junit.jupiter.api.DynamicContainer;
 import org.junit.jupiter.api.TestFactory;
 
-import de.tum.in.test.api.BlacklistPath;
-import de.tum.in.test.api.PathType;
-import de.tum.in.test.api.StrictTimeout;
-import de.tum.in.test.api.WhitelistPath;
-import de.tum.in.test.api.jupiter.Public;
-import de.tum.in.test.api.structural.ConstructorTestProvider;
+import de.tum.cit.ase.ares.api.BlacklistPath;
+import de.tum.cit.ase.ares.api.PathType;
+import de.tum.cit.ase.ares.api.StrictTimeout;
+import de.tum.cit.ase.ares.api.WhitelistPath;
+import de.tum.cit.ase.ares.api.jupiter.Public;
+import de.tum.cit.ase.ares.api.structural.ConstructorTestProvider;
 
 /**
  * @author Stephan Krusche (krusche@in.tum.de)
